@@ -30,15 +30,7 @@ export default function Navbar() {
             height={49}
             loading="eager"
             alt="George Zorakis's logo"
-            className="dark:hidden"
-          />
-          <Image
-            src="/logo-dark.svg"
-            width={160}
-            height={49}
-            loading="eager"
-            alt="George Zorakis's logo"
-            className="hidden dark:block"
+            className="dark:invert"
           />
         </Link>
 
