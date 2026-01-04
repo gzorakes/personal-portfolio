@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/web/navbar";
+import Footer from "@/components/web/footer";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -29,8 +30,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            {children}
+            <div className="mt-auto">
+              <Footer />
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

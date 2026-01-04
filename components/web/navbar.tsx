@@ -21,14 +21,13 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="max-w-7xl mx-auto p-4 mb-10">
-      <div className="flex items-center justify-between">
+    <header className="mb-10 w-full">
+      <div className="max-w-7xl mx-auto p-4 flex items-center justify-between">
         <Link href="/">
           <Image
             src="/logo-light.svg"
             width={160}
-            height={49}
-            loading="eager"
+            height={52}
             alt="George Zorakis's logo"
             className="dark:invert"
           />
