@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+body {
+  overflow-y: scroll;
+}
+
 :root {
   --background: #e8ebed;
   --foreground: #333333;

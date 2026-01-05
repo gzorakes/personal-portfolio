@@ -43,13 +43,11 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     className={cn(
-                      "transition-colors duration-300 hover:text-foreground/80",
-                      isActive
-                        ? buttonVariants({
-                            className: "text-md",
-                            variant: "secondary",
-                          })
-                        : "text-foreground/60"
+                      buttonVariants({
+                        variant: isActive ? "secondary" : "ghost",
+                        className: "text-md",
+                      }),
+                      !isActive && "text-foreground/60 hover:text-foreground/80"
                     )}
                     aria-current={isActive ? "page" : undefined}
                     href={link.href}
@@ -83,7 +81,7 @@ export default function Navbar() {
 
       {isMobileMenuOpen && (
         <div className="bg-secondary rounded-md mt-4 p-4 md:hidden">
-          <ul className="flex flex-col gap-6">
+          <ul className="flex flex-col gap-4">
             {navItems.map((link) => {
               const isActive =
                 pathname === link.href ||
@@ -92,10 +90,10 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     className={cn(
-                      "transition-colors duration-300 hover:text-foreground/80 block",
+                      "block rounded-md p-2 transition-colors duration-300",
                       isActive
-                        ? "bg-accent rounded-md p-2"
-                        : "text-foreground/60"
+                        ? "bg-accent"
+                        : "text-foreground/60 hover:text-foreground/80"
                     )}
                     aria-current={isActive ? "page" : undefined}
                     href={link.href}
