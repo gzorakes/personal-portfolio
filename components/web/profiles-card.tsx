@@ -4,9 +4,15 @@ import Image from "next/image";
 import { buttonVariants } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 
-export default function ProfilesCard() {
+type ProfileCardProps = {
+  orderClass?: string;
+};
+
+export default function ProfilesCard({
+  orderClass = "order-6 md:order-6",
+}: ProfileCardProps) {
   return (
-    <Card className="order-6 md:order-6">
+    <Card className={orderClass}>
       <div className="h-44 flex items-center justify-evenly">
         <Link
           href="https://github.com/gzorakes"

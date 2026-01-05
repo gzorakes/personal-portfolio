@@ -3,9 +3,15 @@ import { ArrowRight, FingerprintPattern } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 
-export default function CredentialsCard() {
+type CredentialsCardProps = {
+  orderClass?: string;
+};
+
+export default function CredentialsCard({
+  orderClass = "order-2",
+}: CredentialsCardProps) {
   return (
-    <Card className="order-2">
+    <Card className={orderClass}>
       <div className="h-44 flex items-center justify-center">
         <FingerprintPattern
           size={120}

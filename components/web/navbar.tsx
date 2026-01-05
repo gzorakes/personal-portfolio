@@ -7,7 +7,7 @@ import { Button, buttonVariants } from "../ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -74,7 +74,7 @@ export default function Navbar() {
             variant="outline"
             size="icon"
             className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
           >
             {isMobileMenuOpen ? <X /> : <Menu />}
           </Button>
@@ -91,7 +91,6 @@ export default function Navbar() {
               return (
                 <li key={link.href}>
                   <Link
-                    onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
                       "transition-colors duration-300 hover:text-foreground/80 block",
                       isActive
