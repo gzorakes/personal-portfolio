@@ -30,6 +30,7 @@ export default function Navbar() {
             height={52}
             alt="George Zorakis's logo"
             className="dark:invert"
+            priority
           />
         </Link>
 
