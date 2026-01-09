@@ -9,12 +9,12 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Card className="pt-0 hover:scale-101 transition-transform cursor-pointer">
       <Link href={`/projects/${project.slug}`}>
-        <div className="relative h-60">
+        <div className="relative aspect-video">
           <Image
             src={project.cover}
             alt={`${project.title} cover image`}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
             priority
             className="object-cover object-top rounded-t-xl"
           />

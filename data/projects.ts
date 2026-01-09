@@ -17,7 +17,7 @@ export const projects: Project[] = [
     description:
       "My personal portfolio with a clean layout, dark mode, and a projects section.",
     cover: "/portfolio-cover.webp",
-    images: ["/georgezorakis.webp", "/projects/portfolio-website/02.webp"],
+    images: ["/portfolio-cover.webp", "/ido-cover.webp", "/chatup-cover.webp"],
     href: "https://georgezorakis.com",
     repo: "https://github.com/yourname/portfolio",
   },
@@ -27,8 +27,8 @@ export const projects: Project[] = [
     stack: "React",
     description:
       "A simple e-commerce front-end with product listing, product page, and a cart UI.",
-    cover: "/mern-chat-cover.webp",
-    images: ["/georgezorakis.webp", "/projects/ecommerce-ui/02.webp"],
+    cover: "/mernchat-cover.webp",
+    images: ["/mernchat-cover.webp", "/projects/ecommerce-ui/02.webp"],
     repo: "https://github.com/yourname/ecommerce-ui",
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description:
       "A small dashboard layout with charts, tables, and responsive navigation.",
     cover: "/chatup-cover.webp",
-    images: ["/georgezorakis.webp", "/projects/dashboard-app/02.webp"],
+    images: ["/chatup-cover.webp", "/projects/dashboard-app/02.webp"],
   },
   {
     slug: "admin-dashboard",
@@ -46,8 +46,8 @@ export const projects: Project[] = [
     stack: "React",
     description:
       "A small dashboard layout with charts, tables, and responsive navigation.",
-    cover: "/admin-dashboard-cover.webp",
-    images: ["/georgezorakis.webp", "/projects/dashboard-app/02.webp"],
+    cover: "/dashboard-cover.webp",
+    images: ["/dashboard-cover.webp", "/projects/dashboard-app/02.webp"],
   },
   {
     slug: "ido-ios",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     description:
       "A small dashboard layout with charts, tables, and responsive navigation.",
     cover: "/ido-cover.webp",
-    images: ["/georgezorakis.webp", "/projects/dashboard-app/02.webp"],
+    images: ["/ido-cover.webp", "/projects/dashboard-app/02.webp"],
   },
   {
     slug: "samiro-villa",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     description:
       "A small dashboard layout with charts, tables, and responsive navigation.",
     cover: "/samiro-cover.webp",
-    images: ["/georgezorakis.webp", "/projects/dashboard-app/02.webp"],
+    images: ["/samiro-cover.webp", "/projects/dashboard-app/02.webp"],
   },
   {
     slug: "rea-boutique-apts",
@@ -74,6 +74,6 @@ export const projects: Project[] = [
     description:
       "A small dashboard layout with charts, tables, and responsive navigation.",
     cover: "/rea-cover.webp",
-    images: ["/georgezorakis.webp", "/projects/dashboard-app/02.webp"],
+    images: ["/rea-cover.webp", "/projects/dashboard-app/02.webp"],
   },
 ];

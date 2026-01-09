@@ -1,5 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ProjectCarousel } from "@/components/web/project-carousel";
 import { projects } from "@/data/projects";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
@@ -34,6 +35,10 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         <h1 className="absolute left-1/2 -translate-x-1/2 text-center text-3xl sm:text-4xl font-bold text-accent-foreground">
           {project.title}
         </h1>
+      </div>
+
+      <div className="pt-10">
+        <ProjectCarousel images={project.images} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

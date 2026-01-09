@@ -93,7 +93,7 @@ export default function page() {
                 Applied Computer Science & Multimedia
               </p>
               <p className="text-muted-foreground text-sm">
-                University of Heraklion
+                Hellenic Mediterranean University
               </p>
             </div>
             <div>
