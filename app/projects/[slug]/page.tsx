@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectCarousel } from "@/components/web/project-carousel";
 import { projects } from "@/data/projects";
 import { ArrowLeft } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -37,46 +36,45 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         </h1>
       </div>
 
-      <div className="pt-10">
-        <ProjectCarousel images={project.images} />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* <Card className="col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-10">
+        <Card className="gap-2 col-span-2 bg-linear-0">
           <CardHeader>
-            <CardTitle className="font-bold text-accent-foreground">
-              <p>{project.title.toUpperCase()}</p>
+            <CardTitle className="font-bold text-muted-foreground/30">
+              <p>ABOUT</p>
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="">
-              This full-stack chat application is designed to provide real-time,
-              secure communication in a modern web environment. Users can
-              register, log in, and instantly connect through one-on-one
-              conversations powered by Socket.IO. A streamlined interface built
-              with React, TailwindCSS and DaisyUI ensures a smooth, responsive
-              user experience across devices.
+            <p className="text-justify leading-relaxed tracking-wide font-medium text-muted-foreground">
+              {project.about}
             </p>
           </CardContent>
         </Card>
 
-        <Card className="col-span-2">
-          <CardHeader>
+        <Card className="gap-2 col-span-2 bg-linear-0 order-3 lg:order-2">
+          <CardHeader className="">
             <CardTitle className="font-bold text-muted-foreground/30">
               <p>#VIEW ON GITHUB</p>
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="">
-              The app integrates persistent storage with MongoDB to save user
-              accounts and chat history, while Node.js and Express handle
-              backend logic and RESTful endpoints. Modular architecture and
-              reusable components keep the project maintainable, while Vite
-              accelerates frontend development. Together, these technologies
-              create a fast, reliable, and scalable messaging platform.
+            <p className="text-justify leading-relaxed tracking-wide font-medium text-muted-foreground">
+              {project.description}
             </p>
           </CardContent>
-        </Card> */}
+        </Card>
+
+        <div className="lg:col-span-4 col-span-2 order-2 lg:order-3">
+          <ProjectCarousel images={project.images} />
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto pt-8">
+        <ul className="flex flex-wrap justify-center gap-4 text-sm font-bold text-muted-foreground">
+          <li className="bg-secondary px-4 py-2 rounded-lg">REACT</li>
+          <li className="bg-secondary px-4 py-2 rounded-lg">NEXTJS</li>
+          <li className="bg-secondary px-4 py-2 rounded-lg">TAILWIND</li>
+          <li className="bg-secondary px-4 py-2 rounded-lg">SHADCN</li>
+        </ul>
       </div>
     </div>
   );
