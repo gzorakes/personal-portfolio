@@ -17,7 +17,6 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) notFound();
-  // grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8
   return (
     <div className="max-w-7xl w-full mx-auto p-4 ">
       <div className="relative flex items-center ">
@@ -70,10 +69,11 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
 
       <div className="max-w-4xl mx-auto pt-8">
         <ul className="flex flex-wrap justify-center gap-4 text-sm font-bold text-muted-foreground">
-          <li className="bg-secondary px-4 py-2 rounded-lg">REACT</li>
-          <li className="bg-secondary px-4 py-2 rounded-lg">NEXTJS</li>
-          <li className="bg-secondary px-4 py-2 rounded-lg">TAILWIND</li>
-          <li className="bg-secondary px-4 py-2 rounded-lg">SHADCN</li>
+          {project.technologies.map((tech) => (
+            <li key={tech} className="bg-secondary px-4 py-2 rounded-lg">
+              {tech}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
