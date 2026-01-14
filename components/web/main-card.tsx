@@ -12,7 +12,7 @@ import { buttonVariants } from "../ui/button";
 
 export default function MainCard() {
   return (
-    <Card className="md:col-span-2 p-0 order-1">
+    <Card className="md:col-span-2 p-0 order-1 overflow-hidden">
       <div className="grid grid-cols-2">
         <div className="col-span-1 relative h-full">
           <Image
@@ -21,7 +21,7 @@ export default function MainCard() {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             priority
-            className="object-cover object-top rounded-l-xl"
+            className="object-cover object-top "
           />
         </div>
         <div className="space-y-6 px-0 py-6 ">

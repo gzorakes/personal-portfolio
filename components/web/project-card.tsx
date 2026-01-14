@@ -7,7 +7,7 @@ import { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="pt-0 hover:scale-101 transition-transform cursor-pointer">
+    <Card className="pt-0 hover:scale-101 transition-transform cursor-pointer overflow-hidden">
       <Link href={`/projects/${project.slug}`}>
         <div className="relative aspect-video">
           <Image
@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
             priority
-            className="object-cover object-top rounded-t-xl"
+            className="object-cover"
           />
         </div>
         <CardContent className="pt-6">

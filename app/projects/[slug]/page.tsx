@@ -52,7 +52,13 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         <Card className="gap-2 col-span-2 bg-linear-0 order-3 lg:order-2">
           <CardHeader className="">
             <CardTitle className="font-bold text-muted-foreground/30">
-              <p>#VIEW ON GITHUB</p>
+              <Link
+                href={project.href || notFound()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>{project.href}</p>
+              </Link>
             </CardTitle>
           </CardHeader>
           <CardContent>

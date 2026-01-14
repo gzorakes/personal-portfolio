@@ -15,7 +15,7 @@ import Image from "next/image";
 
 export function ProjectCarousel({ images }: { images: string[] }) {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false })
+    Autoplay({ delay: 4000, stopOnInteraction: false })
   );
 
   return (
@@ -35,7 +35,7 @@ export function ProjectCarousel({ images }: { images: string[] }) {
                     src={src}
                     fill
                     sizes="(max-width: 1024px) 100vw, 1024px"
-                    className="object-cover object-top"
+                    className="object-cover"
                     alt=""
                   />
                 </div>

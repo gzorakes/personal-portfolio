@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function page() {
   return (
     <div className="max-w-7xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <Card className="lg:col-span-1 md:row-span-2 lg:row-span-1 p-0">
+      <Card className="lg:col-span-1 md:row-span-2 lg:row-span-1 p-0 overflow-hidden">
         <div className="relative h-96 md:h-full lg:h-64">
           <Image
             src="/georgezorakis.webp"
@@ -15,7 +15,7 @@ export default function page() {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             priority
-            className="object-cover object-top rounded-xl"
+            className="object-cover object-top"
           />
         </div>
       </Card>

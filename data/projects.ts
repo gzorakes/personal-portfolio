@@ -1,14 +1,13 @@
 export interface Project {
   slug: string;
   title: string;
-  stack: string;
+  stack: string; // short tech stack displayed on project cards
   about: string;
   description: string;
-  technologies: string[];
+  technologies: string[]; // badges at the bottom of each project card
   cover: string; // shown on cards
-  images: string[]; // gallery on detail page
-  href?: string; // optional external link (live)
-  repo?: string; // optional github link
+  images: string[];
+  href: string;
 }
 
 export const projects: Project[] = [
@@ -30,7 +29,6 @@ export const projects: Project[] = [
     cover: "/portfolio-cover.webp",
     images: ["/portfolio-cover.webp", "/ido-cover.webp", "/chatup-cover.webp"],
     href: "https://georgezorakis.com",
-    repo: "https://github.com/yourname/portfolio",
   },
   {
     slug: "mern-chat",
@@ -53,7 +51,7 @@ export const projects: Project[] = [
     ],
     cover: "/mernchat-cover.webp",
     images: ["/mernchat-cover.webp", "/mern1.webp", "/mern2.webp"],
-    repo: "https://github.com/yourname/ecommerce-ui",
+    href: "https://github.com/gzorakes/mern-chat",
   },
   {
     slug: "chat-up",
@@ -83,6 +81,7 @@ export const projects: Project[] = [
       "/chatup3.webp",
       "/chatup4.webp",
     ],
+    href: "https://github.com/gzorakes/chat-up",
   },
   {
     slug: "admin-dashboard",
@@ -108,6 +107,7 @@ export const projects: Project[] = [
       "/dashboard3.webp",
       "/dashboard4.webp",
     ],
+    href: "https://github.com/gzorakes/admin-dashboard",
   },
   {
     slug: "ido-ios",
@@ -133,6 +133,7 @@ export const projects: Project[] = [
     ],
     cover: "/ido-cover.webp",
     images: ["/ido-cover.webp", "/ido1.webp", "/ido2.webp", "/ido3.webp"],
+    href: "https://github.com/gzorakes/IDO",
   },
   {
     slug: "samiro-villa",
@@ -155,6 +156,7 @@ export const projects: Project[] = [
       "/samiro2.webp",
       "/samiro3.webp",
     ],
+    href: "https://samirovilla.com",
   },
   {
     slug: "rea-boutique-apts",
@@ -172,5 +174,6 @@ export const projects: Project[] = [
     ],
     cover: "/rea-cover.webp",
     images: ["/rea-cover.webp", "/rea1.webp", "/rea2.webp", "/rea3.webp"],
+    href: "https://reaboutiqueapartments.gr/",
   },
 ];
