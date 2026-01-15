@@ -19,6 +19,14 @@ interface Skill {
   name: string;
 }
 
+interface SocialLink {
+  href: string;
+  label: string;
+  icon: string;
+  alt: string;
+  className?: string;
+}
+
 export const experience: Experience[] = [
   {
     id: 1,
@@ -103,4 +111,28 @@ export const skills: Skill[] = [
 
   { id: 24, name: "WordPress" },
   { id: 25, name: "Elementor" },
+];
+
+export const socialLinks = [
+  {
+    href: "https://github.com/gzorakes",
+    label: "View Github profile",
+    icon: "/github.svg",
+    alt: "GitHub icon",
+    className: "dark:invert hover:scale-105 transition-transform",
+  },
+  {
+    href: "https://www.linkedin.com/in/george-zorakis/",
+    label: "View LinkedIn profile",
+    icon: "/linkedin.svg",
+    alt: "LinkedIn icon",
+    className: "hover:scale-105 transition-transform",
+  },
+  {
+    href: "https://wa.me/306946695251",
+    label: "Message me on WhatsApp",
+    icon: "/whatsapp.svg",
+    alt: "WhatsApp icon",
+    className: "hover:scale-105 transition-transform",
+  },
 ];

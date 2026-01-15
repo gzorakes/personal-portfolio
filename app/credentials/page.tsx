@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { education, experience, skills } from "@/data/credentials";
+import { education, experience, skills, socialLinks } from "@/data/credentials";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,32 +27,36 @@ export default function CredentialsPage() {
           <div className="text-center">
             <h1 className="text-2xl font-semibold">George Zorakis</h1>
             <h2 className="text-muted-foreground pb-10">Web Developer</h2>
-            <ul className="flex gap-6 justify-center pb-5">
-              <li>
-                <Image
-                  src="/github.svg"
-                  width={40}
-                  height={40}
-                  alt="github icon"
-                  className="dark:invert hover:scale-105 transition-transform"
-                />
-              </li>
-              <li>
-                <Image
-                  src="/linkedin.svg"
-                  width={40}
-                  height={40}
-                  alt="github icon"
-                  className="hover:scale-105 transition-transform"
-                />
-              </li>
+            <ul className="flex gap-6 pb-5 justify-center">
+              {socialLinks.map((social) => (
+                <li key={social.href}>
+                  <Link
+                    href={social.href}
+                    aria-label={social.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-accent-foreground/10 p-4 rounded-md"
+                  >
+                    <Image
+                      src={social.icon}
+                      width={30}
+                      height={30}
+                      alt={social.alt}
+                      className={social.className}
+                    />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </CardContent>
 
         <CardFooter>
-          <Link href="/contact" className="w-full">
-            <Button className="w-full font-semibold">Contact me</Button>
+          <Link
+            href="/contact"
+            className={buttonVariants({ className: "w-full font-semibold" })}
+          >
+            Contact me
           </Link>
         </CardFooter>
       </Card>
