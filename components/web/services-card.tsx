@@ -42,13 +42,13 @@ export default function ServicesCard() {
           <h2 className="text-2xl text-muted-foreground font-semibold">
             Services Offering
           </h2>
-          <Link
+          {/* <Link
             href="/services"
             aria-label="View services"
             className={buttonVariants()}
           >
             <ArrowRight aria-hidden="true" />
-          </Link>
+          </Link> */}
         </div>
       </CardContent>
     </Card>

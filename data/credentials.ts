@@ -1,4 +1,4 @@
-export interface Experience {
+interface Experience {
   id: number;
   date: string;
   title: string;
@@ -6,12 +6,17 @@ export interface Experience {
   description: string;
 }
 
-export interface Education {
+interface Education {
   id: number;
   date: string;
   title: string;
   institution: string;
   description: string;
+}
+
+interface Skill {
+  id: number;
+  name: string;
 }
 
 export const experience: Experience[] = [
@@ -21,7 +26,7 @@ export const experience: Experience[] = [
     title: "Web Developer",
     company: "Self employed - Freelancer",
     description:
-      "I work as a freelance Web Developer, building modern and responsive websites for individuals and small businesses. I handle the full process, from design and development to deployment, working closely with clients to understand their needs. During this time, I have been focusing on growing my own client base, improving my workflow, and gaining hands-on experience through real projects.",
+      "Freelance Web Developer building modern, responsive websites for individuals and small businesses. I manage the full process from design and development to deployment, working closely with clients to deliver reliable, user-focused solutions while growing my own client base through real projects.",
   },
   {
     id: 2,
@@ -29,7 +34,7 @@ export const experience: Experience[] = [
     title: "Software Developer",
     company: "SkyDynamics - FORTH Hellas",
     description:
-      "I worked as an iOS Developer at SkyDynamics, a leading company specializing in aviation software and flight simulators. At SkyDynamics, I contributed to the development of innovative applications designed for pilot training and aviation-related solutions. Our office is located at the Foundation for Research and Technology – Hellas (FORTH) in Greece, a renowned hub for research and technological development.",
+      "Worked as an iOS Developer at SkyDynamics, contributing to aviation and flight-simulation applications for pilot training. Developed features for production iOS apps within a professional R&D environment at FORTH Hellas in Greece.",
   },
   {
     id: 3,
@@ -37,7 +42,7 @@ export const experience: Experience[] = [
     title: "Web Developer",
     company: "Solvit - Freelancer",
     description:
-      "I worked as a Web Developer and Designer at Solvit – I.T. Solutions & Consulting, specializing in building websites with WordPress. My role involved creating customized, functional sites that balanced aesthetics and performance, collaborating with teams to optimize user experience and meet client needs. This experience helped me develop a strong foundation in web development, design principles, and client communication.",
+      "Worked as a Web Developer and Designer at Solvit, building custom WordPress websites focused on performance, usability, and client needs. Collaborated with teams to deliver visually clean and functional web solutions.",
   },
 ];
 
@@ -48,7 +53,7 @@ export const education: Education[] = [
     title: "Get Into Web Development Bootcamp",
     institution: "100mentors & Bizrupt",
     description:
-      "An introductory web development bootcamp organized by 100mentors and Bizrupt, focused on the fundamentals of modern web development. The program emphasized hands-on learning, basic programming concepts, and practical exercises, helping me build a solid foundation and better understand real-world web development workflows.",
+      "Introductory web development bootcamp focused on modern web fundamentals, hands-on practice, and real-world development workflows.",
   },
   {
     id: 2,
@@ -56,7 +61,7 @@ export const education: Education[] = [
     title: "Applied Computer Science & Multimedia",
     institution: "Hellenic Mediterranean University",
     description:
-      "Studied a combination of software development, multimedia design, and applied computing. Gained hands-on experience with programming, UI/UX design, and digital media technologies. Participated in team projects and academic research focused on innovative software solutions and user-centered applications.",
+      "Studied software development, multimedia, and applied computing with hands-on experience in programming, UI/UX design, and team-based projects.",
   },
   {
     id: 3,
@@ -64,6 +69,38 @@ export const education: Education[] = [
     title: "Music Theory & Composition",
     institution: "Heraklion's School of Music",
     description:
-      "Ongoing studies in classical and contemporary music theory, harmony, and composition techniques. Developed a deep understanding of musical structure, arrangement, and creative expression. Engaged in both solo and collaborative composition projects, contributing to performances and music productions.",
+      "Ongoing studies in music theory and composition, developing strong creative structure, arrangement skills, and collaborative experience in music projects.",
   },
+];
+
+export const skills: Skill[] = [
+  { id: 1, name: "HTML" },
+  { id: 2, name: "CSS" },
+  { id: 3, name: "JavaScript" },
+  { id: 4, name: "TypeScript" },
+  { id: 5, name: "React" },
+  { id: 6, name: "Next.js" },
+  { id: 7, name: "Zustand" },
+  { id: 8, name: "Tailwind" },
+  { id: 9, name: "Shadcn" },
+  { id: 10, name: "Framer Motion" },
+  { id: 11, name: "REST APIs" },
+  { id: 12, name: "Web Design" },
+
+  { id: 13, name: "Node.js" },
+  { id: 14, name: "Express" },
+  { id: 15, name: "MongoDB" },
+  { id: 16, name: "Firebase" },
+
+  { id: 17, name: "Swift" },
+  { id: 18, name: "SwiftUI" },
+  { id: 19, name: "iOS Development" },
+
+  { id: 20, name: "Git" },
+  { id: 21, name: "GitHub" },
+  { id: 22, name: "Debugging" },
+  { id: 23, name: "Code Refactoring" },
+
+  { id: 24, name: "WordPress" },
+  { id: 25, name: "Elementor" },
 ];

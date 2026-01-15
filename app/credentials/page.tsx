@@ -6,20 +6,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { education, experience } from "@/data/credentials";
+import { education, experience, skills } from "@/data/credentials";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function CredentialsPage() {
   return (
-    <div className="max-w-7xl w-full mx-auto p-4 grid grid-cols-3 gap-20 items-start">
-      <Card className="pt-0 overflow-hidden sticky top-35">
+    <div className="max-w-7xl w-full mx-auto p-4 grid md:grid-cols-3 gap-8 items-start">
+      <Card className="pt-0 overflow-hidden md:sticky top-35">
         <div className="relative h-120">
           <Image
             src="/georgezorakis.webp"
             alt="George Zorakis's image"
             fill
-            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-top"
           />
         </div>
         <CardContent>
@@ -56,7 +57,7 @@ export default function CredentialsPage() {
         </CardFooter>
       </Card>
 
-      <div className="col-span-2 space-y-10">
+      <div className="md:col-span-2 space-y-8">
         <Card className="bg-secondary">
           <CardHeader>
             <CardTitle className="text-lg">ABOUT ME</CardTitle>
@@ -64,34 +65,28 @@ export default function CredentialsPage() {
           <CardContent>
             <div className="flex flex-col gap-10">
               <p>
-                I am a Full Stack Web Developer living in Heraklion, Greece. My
-                background is rooted in music. I studied it extensively and have
-                been working professionally as a bouzouki and piano player for
-                several years. Music composition remains a big part of my life
-                and continues to influence how I approach creativity and
-                structure in my work.
+                I am a Full Stack Web Developer based in Heraklion, Greece,
+                specializing in building modern web applications with Next.js.
+                My background is rooted in music, where years of professional
+                experience as a bouzouki and piano player shaped my creativity,
+                structure, and attention to detail.
               </p>
               <p>
                 I studied Computer Science and Multimedia at the University of
-                Heraklion, gaining a strong foundation in both technical and
-                visual aspects of digital creation. My programming journey began
-                three years ago with Python and quickly grew into full-stack web
-                development. Today, I work with modern technologies like React,
-                Node.js, Express, and MongoDB, building applications that are
-                fast, scalable, and user-friendly.
+                Heraklion and started programming with Python before moving into
+                full-stack web development. Today, I mainly work with Next.js,
+                React, TypeScript, and Node.js on modern web applications.
               </p>
               <p>
-                I enjoy designing and developing clean, responsive interfaces
-                while ensuring reliable and maintainable architecture behind the
-                scenes. With a strong eye for detail and a passion for
-                usability, I focus on delivering applications that balance
-                performance with design clarity.
+                I like building clean, responsive interfaces and making sure the
+                code behind them actually makes sense. I care about how things
+                work, not just how they look.
               </p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="lg:col-span-2 bg-secondary">
+        <Card className="md:col-span-2 bg-secondary">
           <CardHeader>
             <CardTitle className="text-lg">EXPERIENCE</CardTitle>
           </CardHeader>
@@ -130,6 +125,24 @@ export default function CredentialsPage() {
                   </p>
                   <p>{edu.description}</p>
                 </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="lg:col-span-2 bg-secondary">
+          <CardHeader>
+            <CardTitle className="text-lg">SKILLS</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-4">
+              {skills.map((skill) => (
+                <span
+                  key={skill.id}
+                  className="bg-accent-foreground/10 px-3 py-2 rounded-md text-xs font-bold"
+                >
+                  {skill.name}
+                </span>
               ))}
             </div>
           </CardContent>
