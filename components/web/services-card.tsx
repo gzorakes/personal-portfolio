@@ -42,6 +42,7 @@ export default function ServicesCard() {
           <h2 className="text-2xl text-muted-foreground font-semibold">
             Services Offering
           </h2>
+          {/* TODO: Services Page (?) */}
           {/* <Link
             href="/services"
             aria-label="View services"

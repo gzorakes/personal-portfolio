@@ -41,7 +41,11 @@ export default function ContactForm() {
           render={({ field, fieldState }) => (
             <Field>
               <FieldLabel>Name</FieldLabel>
-              <Input placeholder="Type your full name" {...field} />
+              <Input
+                placeholder="Type your full name"
+                aria-invalid={fieldState.invalid}
+                {...field}
+              />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
@@ -73,6 +77,7 @@ export default function ContactForm() {
               <FieldLabel>Message</FieldLabel>
               <Textarea
                 placeholder="Type your message here and i will respond to your email"
+                aria-invalid={fieldState.invalid}
                 {...field}
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
