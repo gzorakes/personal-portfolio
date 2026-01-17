@@ -62,7 +62,7 @@ export default function CredentialsPage() {
       </Card>
 
       <div className="md:col-span-2 space-y-8">
-        <Card className="bg-secondary">
+        <Card>
           <CardHeader>
             <CardTitle className="text-lg">ABOUT ME</CardTitle>
           </CardHeader>
@@ -90,7 +90,7 @@ export default function CredentialsPage() {
           </CardContent>
         </Card>
 
-        <Card className="md:col-span-2 bg-secondary">
+        <Card className="md:col-span-2">
           <CardHeader>
             <CardTitle className="text-lg">EXPERIENCE</CardTitle>
           </CardHeader>
@@ -112,7 +112,7 @@ export default function CredentialsPage() {
           </CardContent>
         </Card>
 
-        <Card className="lg:col-span-2 bg-secondary">
+        <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="text-lg">EDUCATION</CardTitle>
           </CardHeader>
@@ -134,7 +134,7 @@ export default function CredentialsPage() {
           </CardContent>
         </Card>
 
-        <Card className="lg:col-span-2 bg-secondary">
+        <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle className="text-lg">SKILLS</CardTitle>
           </CardHeader>

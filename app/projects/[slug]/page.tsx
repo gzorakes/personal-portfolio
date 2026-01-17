@@ -43,9 +43,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-justify leading-relaxed tracking-wide font-medium text-muted-foreground">
-              {project.about}
-            </p>
+            <p className="leading-relaxed tracking-wide">{project.about}</p>
           </CardContent>
         </Card>
 
@@ -62,7 +60,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-justify leading-relaxed tracking-wide font-medium text-muted-foreground">
+            <p className="leading-relaxed tracking-wide">
               {project.description}
             </p>
           </CardContent>

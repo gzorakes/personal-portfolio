@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/web/navbar";
 import Footer from "@/components/web/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <div className="min-h-screen flex flex-col">
             <Navbar />
             {children}
+            <Toaster />
             <div className="mt-auto">
               <Footer />
             </div>
