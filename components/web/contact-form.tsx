@@ -93,7 +93,7 @@ export default function ContactForm() {
             <Field>
               <FieldLabel>Message</FieldLabel>
               <Textarea
-                placeholder="Type your message here and i will respond to your email"
+                placeholder="Type your message here and I will respond to your email"
                 aria-invalid={fieldState.invalid}
                 disabled={isPending}
                 {...field}
