@@ -8,7 +8,10 @@ import { Project } from "@/data/projects";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Card className="pt-0 hover:scale-101 transition-transform cursor-pointer overflow-hidden">
-      <Link href={`/projects/${project.slug}`}>
+      <Link
+        href={`/projects/${project.slug}`}
+        aria-label={`View project: ${project.title}`}
+      >
         <div className="relative aspect-video">
           <Image
             src={project.cover}

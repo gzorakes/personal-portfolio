@@ -15,13 +15,14 @@ import Image from "next/image";
 
 export function ProjectCarousel({ images }: { images: string[] }) {
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
+    Autoplay({ delay: 4000, stopOnInteraction: false }),
   );
 
   return (
     <Carousel
       plugins={[plugin.current]}
       className="w-full max-w-5xl mx-auto"
+      aria-label="Project screenshots"
       onMouseEnter={() => plugin.current.stop()}
       onMouseLeave={() => plugin.current.play()}
     >
@@ -36,7 +37,7 @@ export function ProjectCarousel({ images }: { images: string[] }) {
                     fill
                     sizes="(max-width: 1024px) 100vw, 1024px"
                     className="object-cover"
-                    alt=""
+                    alt="Project screenshot"
                   />
                 </div>
               </CardContent>

@@ -2,12 +2,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ContactForm from "@/components/web/contact-form";
 import { socialLinks } from "@/data/credentials";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact George Zorakis — full-stack web developer in Heraklion, Crete. Send a message via the contact form or reach out by email and phone.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact — George Zorakis",
+    description:
+      "Get in touch with George Zorakis — full-stack web developer in Heraklion, Crete.",
+    url: "/contact",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact — George Zorakis",
+    description:
+      "Get in touch with George Zorakis — full-stack web developer in Heraklion, Crete.",
+  },
+};
 
 export default function ContactPage() {
   return (
     <div className="max-w-7xl mx-auto w-full p-4">
+      <h1 className="sr-only">Contact</h1>
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
         <Card className="order-2 md:order-1">
           <CardHeader>
@@ -16,9 +39,13 @@ export default function ContactPage() {
           <CardContent>
             <div className="space-y-10">
               <div className="flex items-center gap-6">
-                <Link href="mailto:georgezorakis@gmail.com">
+                <Link
+                  href="mailto:georgezorakis@gmail.com"
+                  aria-label="Email George"
+                >
                   <div className="bg-accent-foreground/10 p-4 rounded-md">
                     <Mail
+                      aria-hidden="true"
                       size={40}
                       strokeWidth={1}
                       className="hover:scale-105 transition-transform"
@@ -35,9 +62,10 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-center gap-6">
-                <Link href="tel:+306946695251">
+                <Link href="tel:+306946695251" aria-label="Call George">
                   <div className="bg-accent-foreground/10 p-4 rounded-md">
                     <Phone
+                      aria-hidden="true"
                       size={40}
                       strokeWidth={1}
                       className="hover:scale-105 transition-transform"
@@ -54,7 +82,7 @@ export default function ContactPage() {
 
               <div className="flex items-center gap-6">
                 <div className="bg-accent-foreground/10 p-4 rounded-md">
-                  <MapPin size={40} strokeWidth={1} />
+                  <MapPin size={40} strokeWidth={1} aria-hidden="true" />
                 </div>
                 <div>
                   <h2 className="text-sm font-semibold text-accent-foreground">

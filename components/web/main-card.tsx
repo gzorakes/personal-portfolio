@@ -17,7 +17,7 @@ export default function MainCard() {
         <div className="col-span-1 relative h-full">
           <Image
             src="/georgezorakis.webp"
-            alt="George Zorakis's image"
+            alt="Portrait of George Zorakis, full-stack web developer"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             priority

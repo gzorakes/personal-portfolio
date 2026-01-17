@@ -7,8 +7,28 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { education, experience, skills, socialLinks } from "@/data/credentials";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Credentials",
+  description:
+    "Credentials of George Zorakis — full-stack web developer in Heraklion, Greece. Experience, education, and skills in Next.js, React, TypeScript, and Node.js.",
+  alternates: { canonical: "/credentials" },
+  openGraph: {
+    title: "Credentials — George Zorakis",
+    description:
+      "Experience, education, and skills of George Zorakis — full-stack web developer in Heraklion, Greece.",
+    url: "/credentials",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Credentials — George Zorakis",
+    description:
+      "Experience, education, and skills of George Zorakis — full-stack web developer in Heraklion, Greece.",
+  },
+};
 
 export default function CredentialsPage() {
   return (
@@ -139,16 +159,16 @@ export default function CredentialsPage() {
             <CardTitle className="text-lg">SKILLS</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-4">
+            <ul className="flex flex-wrap gap-4">
               {skills.map((skill) => (
-                <span
+                <li
                   key={skill.id}
                   className="bg-accent-foreground/10 px-3 py-2 rounded-md text-xs font-bold"
                 >
                   {skill.name}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </CardContent>
         </Card>
       </div>

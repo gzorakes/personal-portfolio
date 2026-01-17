@@ -3,8 +3,46 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProjectCarousel } from "@/components/web/project-carousel";
 import { projects } from "@/data/projects";
 import { ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: ProjectDetailProps): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project not found",
+      description: "This project does not exist.",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const description = project.description ?? project.about ?? "";
+  const ogImage = project.cover ? [{ url: project.cover }] : undefined;
+
+  return {
+    title: project.title,
+    description,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title: `${project.title} — George Zorakis`,
+      description,
+      url: `/projects/${project.slug}`,
+      images: ogImage,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — George Zorakis`,
+      description,
+      images: project.cover ? [project.cover] : undefined,
+    },
+  };
+}
 
 interface ProjectDetailProps {
   params: Promise<{
@@ -39,7 +77,7 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
         <Card className="gap-2 col-span-2 bg-linear-0">
           <CardHeader>
             <CardTitle className="font-bold text-muted-foreground/30">
-              <p>ABOUT</p>
+              <h2>ABOUT</h2>
             </CardTitle>
           </CardHeader>
           <CardContent>

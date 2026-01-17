@@ -7,7 +7,7 @@ import { Button, buttonVariants } from "../ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -28,13 +28,13 @@ export default function Navbar() {
             src="/logo-light.svg"
             width={160}
             height={52}
-            alt="George Zorakis's logo"
+            alt="George Zorakis logo"
             className="dark:invert"
             priority
           />
         </Link>
 
-        <nav>
+        <nav aria-label="Main navigation">
           <ul className="hidden md:flex items-center gap-10">
             {navItems.map((link) => {
               const isActive =
@@ -48,7 +48,8 @@ export default function Navbar() {
                         variant: isActive ? "secondary" : "ghost",
                         className: "text-md",
                       }),
-                      !isActive && "text-foreground/60 hover:text-foreground/80"
+                      !isActive &&
+                        "text-foreground/60 hover:text-foreground/80",
                     )}
                     aria-current={isActive ? "page" : undefined}
                     href={link.href}
@@ -74,14 +75,24 @@ export default function Navbar() {
             size="icon"
             className="md:hidden"
             onClick={() => setIsMobileMenuOpen((v) => !v)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? (
+              <X aria-hidden="true" />
+            ) : (
+              <Menu aria-hidden="true" />
+            )}
           </Button>
         </div>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="bg-secondary rounded-md mt-4 p-4 md:hidden">
+        <div
+          className="bg-secondary rounded-md mt-4 p-4 md:hidden"
+          id="mobile-menu"
+        >
           <ul className="flex flex-col gap-4">
             {navItems.map((link) => {
               const isActive =
@@ -94,10 +105,11 @@ export default function Navbar() {
                       "block rounded-md p-2 transition-colors duration-300",
                       isActive
                         ? "bg-accent"
-                        : "text-foreground/60 hover:text-foreground/80"
+                        : "text-foreground/60 hover:text-foreground/80",
                     )}
                     aria-current={isActive ? "page" : undefined}
                     href={link.href}
+                    // onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
                   </Link>

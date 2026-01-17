@@ -1,3 +1,6 @@
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -10,10 +13,25 @@ import CredentialsCard from "@/components/web/credentials-card";
 import ProfilesCard from "@/components/web/profiles-card";
 import WorkTogetherCard from "@/components/web/worktogether-card";
 import { education, experience } from "@/data/credentials";
-import Image from "next/image";
-import Link from "next/link";
 
-export default function page() {
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "About George Zorakis, a full-stack web developer in Heraklion, Crete, specializing in React, Next.js, TypeScript, and scalable web applications.",
+  openGraph: {
+    title: "About George Zorakis",
+    description:
+      "Full-stack web developer in Heraklion, Crete, specializing in React, Next.js, TypeScript, and scalable web applications.",
+    url: "/about",
+  },
+  twitter: {
+    title: "About George Zorakis",
+    description:
+      "Full-stack web developer in Heraklion, Crete, specializing in React, Next.js, TypeScript, and scalable web applications.",
+  },
+};
+
+export default function AboutPage() {
   return (
     <div className="max-w-7xl mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {/* Image */}
@@ -21,7 +39,7 @@ export default function page() {
         <div className="relative h-96 md:h-full lg:h-64">
           <Image
             src="/georgezorakis.webp"
-            alt="George Zorakis's image"
+            alt="Portrait of George Zorakis"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             priority
@@ -59,7 +77,9 @@ export default function page() {
       {/* Experience card */}
       <Card className="lg:col-span-2">
         <CardHeader>
-          <CardTitle className="text-lg">EXPERIENCE</CardTitle>
+          <CardTitle>
+            <h2 className="text-lg">EXPERIENCE</h2>
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-6">
@@ -91,7 +111,9 @@ export default function page() {
       {/* Education card */}
       <Card className="lg:col-span-2 lg:order-4 md:order-5">
         <CardHeader>
-          <CardTitle className="text-lg">EDUCATION</CardTitle>
+          <CardTitle>
+            <h2 className="text-lg">EDUCATION</h2>
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-6">
