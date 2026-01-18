@@ -63,6 +63,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/credentials"
+            aria-label="Read more about George Zorakis"
             className={buttonVariants({
               variant: "outline",
               className: "lg:self-start lg:-ml-1 text-muted-foreground",
@@ -97,13 +98,14 @@ export default function AboutPage() {
         <CardFooter className="-ml-1">
           <Link
             href="/credentials"
+            aria-label="View George Zorakis experience details"
             className={buttonVariants({
               variant: "outline",
               size: "sm",
               className: "text-muted-foreground",
             })}
           >
-            Details
+            Details <span className="sr-only">about experience</span>
           </Link>
         </CardFooter>
       </Card>
@@ -131,13 +133,14 @@ export default function AboutPage() {
         <CardFooter className="-ml-1">
           <Link
             href="/credentials"
+            aria-label="View George Zorakis education details"
             className={buttonVariants({
               variant: "outline",
               size: "sm",
               className: "text-muted-foreground",
             })}
           >
-            Details
+            Details <span className="sr-only">about education</span>
           </Link>
         </CardFooter>
       </Card>
