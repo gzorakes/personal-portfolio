@@ -15,7 +15,7 @@ import Image from "next/image";
 
 export function ProjectCarousel({ images }: { images: string[] }) {
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false }),
+    Autoplay({ delay: 5000, stopOnInteraction: false }),
   );
 
   return (
@@ -27,17 +27,19 @@ export function ProjectCarousel({ images }: { images: string[] }) {
       onMouseLeave={() => plugin.current.play()}
     >
       <CarouselContent>
-        {images.map((src) => (
+        {images.map((src, i) => (
           <CarouselItem key={src}>
             <Card className="p-0 overflow-hidden">
               <CardContent className="p-0">
-                <div className="relative aspect-video w-full">
+                <div className="relative aspect-video w-full [transform:translateZ(0)]">
                   <Image
                     src={src}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 1024px"
+                    alt={`Project screenshot ${i + 1}`}
                     className="object-cover"
-                    alt="Project screenshot"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 95vw, 1280px"
+                    priority={i === 0}
+                    loading="eager"
                   />
                 </div>
               </CardContent>

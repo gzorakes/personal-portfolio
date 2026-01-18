@@ -27,7 +27,12 @@ export const projects: Project[] = [
       "Framer Motion",
     ],
     cover: "/portfolio-cover.webp",
-    images: ["/portfolio-cover.webp", "/ido-cover.webp", "/chatup-cover.webp"],
+    images: [
+      "/portfolio-cover.webp",
+      "/portfolio1.webp",
+      "/portfolio2.webp",
+      "/portfolio3.webp",
+    ],
     href: "https://georgezorakis.com",
   },
   {

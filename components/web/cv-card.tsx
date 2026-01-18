@@ -1,6 +1,5 @@
 import { Card, CardContent } from "../ui/card";
 import { Download, FileUser } from "lucide-react";
-import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 
 export default function CVCard() {
@@ -14,13 +13,12 @@ export default function CVCard() {
           strokeWidth={0.8}
         />
       </div>
-      {/* CHANGE LATER - DOWNLOAD CV HERE ITS NOT A LINK */}
       <CardContent className="mt-auto">
         <div className="flex items-center justify-between my-auto">
           <h2 className="text-2xl text-muted-foreground font-semibold">
             Download CV
           </h2>
-          <Link
+          <a
             href="/zorakis-george-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -28,7 +26,7 @@ export default function CVCard() {
             className={buttonVariants()}
           >
             <Download aria-hidden="true" />
-          </Link>
+          </a>
         </div>
       </CardContent>
     </Card>
