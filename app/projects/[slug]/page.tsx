@@ -6,6 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import * as motion from "motion/react-client";
 
 export async function generateMetadata({
   params,
@@ -74,47 +75,72 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-10">
-        <Card className="gap-2 col-span-2 bg-linear-0">
-          <CardHeader>
-            <CardTitle className="font-bold text-muted-foreground/30">
-              <h2>ABOUT</h2>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="leading-relaxed tracking-wide">{project.about}</p>
-          </CardContent>
-        </Card>
+        <motion.div
+          className="col-span-2"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ ease: "easeInOut", duration: 0.8 }}
+        >
+          <Card className="gap-2 bg-linear-0 h-full">
+            <CardHeader>
+              <CardTitle className="font-bold text-muted-foreground/30">
+                <h2>ABOUT</h2>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="leading-relaxed tracking-wide">{project.about}</p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
-        <Card className="gap-2 col-span-2 bg-linear-0 order-3 lg:order-2">
-          <CardHeader className="">
-            <CardTitle className="font-bold text-muted-foreground/30">
-              <Link
-                href={project.href || notFound()}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p>{project.href}</p>
-              </Link>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="leading-relaxed tracking-wide">
-              {project.description}
-            </p>
-          </CardContent>
-        </Card>
+        <motion.div
+          className="col-span-2 order-3 lg:order-2"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ ease: "easeInOut", duration: 0.8 }}
+        >
+          <Card className="gap-2 bg-linear-0 h-full">
+            <CardHeader className="">
+              <CardTitle className="font-bold text-muted-foreground/30">
+                <Link
+                  href={project.href || notFound()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>{project.href}</p>
+                </Link>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="leading-relaxed tracking-wide">
+                {project.description}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
-        <div className="lg:col-span-4 col-span-2 order-2 lg:order-3">
+        <motion.div
+          className="lg:col-span-4 col-span-2 order-2 lg:order-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 0.8 }}
+        >
           <ProjectCarousel images={project.images} />
-        </div>
+        </motion.div>
       </div>
 
       <div className="max-w-4xl mx-auto pt-8">
         <ul className="flex flex-wrap justify-center gap-4 text-sm font-bold text-muted-foreground">
-          {project.technologies.map((tech) => (
-            <li key={tech} className="bg-secondary px-4 py-2 rounded-lg">
+          {project.technologies.map((tech, i) => (
+            <motion.li
+              key={tech}
+              className="bg-secondary px-4 py-2 rounded-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ ease: "easeInOut", delay: i * 0.1 }}
+            >
               {tech}
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>

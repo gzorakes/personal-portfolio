@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -64,12 +65,17 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link
-            href="/contact"
-            className={cn(buttonVariants(), "hidden md:block")}
+          <motion.div
+            animate={{ rotate: [0, 5, -5, 5, -5, 5, -5, 5, -5, 0] }}
+            transition={{ duration: 0.7, delay: 1.5 }}
           >
-            LET&apos;S TALK
-          </Link>
+            <Link
+              href="/contact"
+              className={cn(buttonVariants(), "hidden md:block")}
+            >
+              LET&apos;S TALK
+            </Link>
+          </motion.div>
           <Button
             variant="outline"
             size="icon"
