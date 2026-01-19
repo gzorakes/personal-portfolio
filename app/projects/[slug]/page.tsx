@@ -121,8 +121,8 @@ export default async function ProjectDetail({ params }: ProjectDetailProps) {
 
         <motion.div
           className="lg:col-span-4 col-span-2 order-2 lg:order-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ x: -30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 0.8 }}
         >
           <ProjectCarousel images={project.images} />
