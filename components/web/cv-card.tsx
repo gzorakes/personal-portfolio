@@ -25,7 +25,7 @@ export default function CVCard() {
               Download CV
             </h2>
             <a
-              href="/zorakis-george-CV.pdf"
+              href="/george-zorakis-CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download CV"
