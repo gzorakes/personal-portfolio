@@ -16,7 +16,7 @@ export default function ServicesCard() {
       <Card className="h-full">
         <div className="flex items-center justify-evenly h-44 relative">
           <Image
-            src="/js-yellow.svg"
+            src="/typescript.svg"
             width={50}
             height={50}
             alt="JavaScript logo"
