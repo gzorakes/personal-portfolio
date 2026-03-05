@@ -12,6 +12,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "wattup",
+    title: "Wattup ",
+    stack: "Next.js / TypeScript",
+    about:
+      "Wattup is the official website for an electrical services company based in Heraklion, Crete. Designed and built to create a professional online presence, it showcases the company's services, completed projects, and contact information — giving potential clients a clear and trustworthy first impression.",
+    description:
+      "Built with Next.js and TypeScript, using Tailwind CSS and shadcn. The project follows a modern component-driven architecture, emphasizing performance, SEO optimization, and a fully responsive design crafted by me.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn",
+      "Framer Motion",
+    ],
+    cover: "/wattup-cover.webp",
+    images: [
+      "/wattup-cover.webp",
+      "/wattup1.webp",
+      "/wattup2.webp",
+      "/wattup3.webp",
+    ],
+    href: "https://wattup.gr",
+  },
+  {
     slug: "portfolio",
     title: "Portfolio",
     stack: "Next.js / TypeScript",
